@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300&family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Montserrat:wght@200;300&family=Open+Sans&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+.navbar {
+  position: fixed;
+  
+  height: 80px;
+  width: 100%;
+  
+  background-color: transparent;
+  color: rgb(226, 226, 226);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  font-family: 'Montserrat', sans-serif;
+  font-size: 15px;
+
+  transition: all ease-in-out 0.3s;
+}
+
+.navbar ul {
+  list-style: none;
+}
+
+.navbar .nav-items a {
+  text-decoration: none;
+  color: rgb(226, 226, 226);
+  transition: ease-in-out 0.2s;
+}
+
+.navbar .nav-items a:hover {
+  color: rgb(185, 185, 185);
+}
+
+/* navbar items*/
+.nav-items {
+  display: flex;
+}
+
+.nav-items li {
+  padding: 7px;
+}
+
+.account {
+  margin: 0px 10px 0px 0px;
+}
+
+.account a {
+  text-decoration: none;
+  color: white;
+  transition: all ease-out 0.3s;
+  margin: 4px;
+}
+
+.btn-register {
+  border: 1px solid rgb(218, 78, 78);
+  padding: 10px 15px;
+  transition: all ease-out 0.3s;
+  border-radius: 4px;
+}
+
+.btn-register:hover {
+  background: rgb(218, 78, 78);
+}
+
+.btn-login:hover {
+  color: rgb(212, 212, 212);  
+}
+
+.btn-login {
+  padding: 0;
+  margin: 0;
+}
+
+/*Section Main*/
+
+.section-main {
+  height: 100vh;
+}
+
+.space-one {
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50%;
+  background-image: url('imgs/background.svg');
+  color: rgb(214, 214, 214);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+}
+
+.space-two {
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  margin: 0 auto;
+  background-position: 30% 0%;
+  background-color: rgb(56, 56, 56);
+}
+.introduction {
+  font-family: "Open Sans", sans-serif;
+  padding: 100px;
+  font-size: 1rem;
+  text-align: center;
+}
+
+
+/*Cards*/
+
+.cards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.card {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  width: 300px;
+  height: 360px;
+  text-align: center;
+  border-radius: 5px;
+  font-family: "Montserrat", sans-serif;
+  box-shadow: 4px 3px 7px rgba(0, 0, 0, 0.514);
+  border: solid 1px white;
+  background-color: rgba(255, 255, 255, 0.671);
+  color: rgb(54, 54, 54);
+  white-space: normal;
+  padding: 30px;
+  margin: 0px 20px;
+  transition: all ease-in-out 0.3s;
+}
+
+.card:focus {
+  transform: scale(2);  
+}
+
+.card:hover {
+  transform: scale(1.04);
+}
+
+.card p {
+  font-size: 17px;
+}
+
+.card a {
+  text-decoration: none;
+  color: white;
+}
+
+.card .btn-register {
+  color: rgb(74, 137, 255);
+  border: 1px solid rgb(74, 137, 255);
+}
+
+.card .btn-register:hover {
+  color: white;
+  background-color: rgb(74, 137, 255);
+}
