@@ -109,25 +109,57 @@
   background: linear-gradient(to right, rgb(29, 29, 41),rgb(31, 31, 39), rgb(49, 49, 87));
   text-align: center;
   color: rgb(214, 214, 214);
-  overflow: scroll;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+.introduction {
+  font-family: "Open Sans", sans-serif;
+  font-size: 2.5rem;
+  text-align: center;
+  flex-basis: 90%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-.introduction {
-  font-family: "Open Sans", sans-serif;
-  padding: 100px;
-  font-size: 1.2rem;
-  text-align: center;
+
+.introduction * {
+  padding: 10px 0px;
+}
+
+.introduction p {
+  font-size: 18px;
+}
+
+.btn-announcement {
+  font-size: 18px;
+  text-decoration: none;
+  color: white;
+  background-color: purple;
+  width: 30%;
+  border-radius: 5px;
+  box-shadow: inset 0 0 0 0 rgb(198, 0, 224);
+  transition: all ease-in-out 0.4s;
+  font-family: 'Montserrat', sans-serif;
+  margin-top: 70px;
+}
+
+.btn-announcement:hover {
+  box-shadow: inset 0 -50px 0 0 rgb(198, 0, 224);
+}
+
+.img-illustration {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
 }
 
 
 /*Cards*/
-
-.title-container {
-  padding: 20px;
-}
 
 .title-products {
   font-size: 40px;
@@ -135,11 +167,17 @@
   margin: 0px 0px 30px 0px;
 }
 
+.economy {
+  background-color: rgba(240, 88, 88, 0.932);
+  padding: 5px;
+  color: rgb(243, 182, 182);
+  border-radius: 30px;
+}
+
 .cards {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  padding: 0px 70px;
   flex-wrap: wrap;
 }
 
@@ -155,8 +193,8 @@
   font-family: "Montserrat", sans-serif;
   box-shadow: 4px 3px 7px rgba(71, 71, 71, 0.514);
   border: solid 1px rgb(121, 121, 121);
-  background-color: rgba(43, 43, 43, 0.788);
-  color: rgb(172, 172, 172);
+  background: linear-gradient(to left, rgb(29, 29, 41),rgb(31, 31, 39), rgb(49, 49, 87));
+  color: rgb(201, 200, 200);
   white-space: normal;
   padding: 30px;
   margin: 0px 20px;
@@ -243,6 +281,23 @@
 
 .descont {
   color: rgba(152, 243, 91, 0.842);
+}
+
+.ofert {
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.ofert s {
+  color: rgb(221, 170, 75);
+}
+
+.ofert .price-correct {
+  color: rgb(75, 221, 172);
+}
+
+.sign-money {
+  font-size: 25px;
 }
 
 div p {
