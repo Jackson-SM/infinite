@@ -1,5 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300&family=Open+Sans&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Montserrat:wght@200;300&family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+1+Code:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
 
 * {
   margin: 0;
@@ -25,6 +26,8 @@
   font-size: 15px;
 
   transition: all ease-in-out 0.3s;
+
+  z-index: 1;
 }
 
 .navbar ul {
@@ -84,52 +87,65 @@
 /*Section Main*/
 
 .section-main {
-  height: 100vh;
+  background-color: rgb(38, 38, 49);
 }
 
-.space-one {
-  height: 100%;
+.section-one {
+  height: 800px;
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: 50%;
-  background-image: url('imgs/background.svg');
+  background-position: 80%;
+  background-image: url('../imgs/background.svg ');
   color: rgb(214, 214, 214);
   display: flex;
   align-items: center;
-  justify-content: center;
   padding: 0;
   margin: 0;
 }
 
-.space-two {
-  height: 100%;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
+.section-two {
+  height: 800px;
   margin: 0 auto;
-  background-position: 30% 0%;
-  background-color: rgb(56, 56, 56);
+  background: linear-gradient(to right, rgb(29, 29, 41),rgb(31, 31, 39), rgb(49, 49, 87));
+  text-align: center;
+  color: rgb(214, 214, 214);
+  overflow: scroll;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .introduction {
   font-family: "Open Sans", sans-serif;
   padding: 100px;
-  font-size: 1rem;
+  font-size: 1.2rem;
   text-align: center;
 }
 
 
 /*Cards*/
 
+.title-container {
+  padding: 20px;
+}
+
+.title-products {
+  font-size: 40px;
+  font-family: 'Montserrat', sans-serif;
+  margin: 0px 0px 30px 0px;
+}
+
 .cards {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
-  padding: 20px;
+  padding: 0px 70px;
+  flex-wrap: wrap;
 }
 
 .card {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   flex-direction: column;
   width: 300px;
@@ -137,22 +153,18 @@
   text-align: center;
   border-radius: 5px;
   font-family: "Montserrat", sans-serif;
-  box-shadow: 4px 3px 7px rgba(0, 0, 0, 0.514);
-  border: solid 1px white;
-  background-color: rgba(255, 255, 255, 0.671);
-  color: rgb(54, 54, 54);
+  box-shadow: 4px 3px 7px rgba(71, 71, 71, 0.514);
+  border: solid 1px rgb(121, 121, 121);
+  background-color: rgba(43, 43, 43, 0.788);
+  color: rgb(172, 172, 172);
   white-space: normal;
   padding: 30px;
   margin: 0px 20px;
   transition: all ease-in-out 0.3s;
 }
 
-.card:focus {
-  transform: scale(2);  
-}
-
 .card:hover {
-  transform: scale(1.04);
+  transform: scale(1.02);
 }
 
 .card p {
@@ -161,15 +173,78 @@
 
 .card a {
   text-decoration: none;
-  color: white;
 }
 
-.card .btn-register {
-  color: rgb(74, 137, 255);
-  border: 1px solid rgb(74, 137, 255);
+/*Button Cards*/
+.card .btn-purchase {
+  border-radius: 5px;
+  padding: 10px 30px;
+  transition: all ease-in-out 0.3s;
+  color: rgb(39, 39, 39);
+  background-color: rgb(255, 255, 255);
+}
+.card .btn-purchase:hover {
+  padding: 10px 70px;
 }
 
-.card .btn-register:hover {
+.card-basic .btn-purchase {
   color: white;
-  background-color: rgb(74, 137, 255);
+  background-color: rgb(99, 162, 221);
+}
+.card-basic .btn-purchase:hover {
+  background-color: rgb(16, 119, 214);
+}
+
+.card-premium {
+  border: 2px solid rgb(221, 99, 99);
+}
+.card-premium .btn-purchase {
+  color: white;
+  background-color: rgb(221, 99, 99);
+}
+.card-premium .btn-purchase:hover {
+  background-color: rgb(209, 65, 65);
+}
+
+.card-diamond .btn-purchase {
+  background-color: rgb(173, 74, 197);
+  color: white;;
+}
+.card-diamond .btn-purchase:hover {
+  background-color: rgb(147, 23, 179);
+}
+
+.corp-product {
+  display: flex;
+  flex-direction: column;
+}
+
+.card .prices {
+  font-size: 50px;
+  margin: 0;
+  padding: 0;
+}
+.card .price {
+  font-family: 'Rubik', sans-serif;
+}
+
+.price-container {
+  display: flex;
+}
+/**/
+
+.prices-descont {
+  font-size: 14px;
+}
+
+.original-value {
+  color: rgb(245, 76, 76);
+}
+
+.descont {
+  color: rgba(152, 243, 91, 0.842);
+}
+
+div p {
+  font-family: 'M PLUS 1 Code', sans-serif;
 }
