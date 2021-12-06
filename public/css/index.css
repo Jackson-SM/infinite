@@ -196,7 +196,7 @@
   background: linear-gradient(to left, rgb(29, 29, 41),rgb(31, 31, 39), rgb(49, 49, 87));
   color: rgb(201, 200, 200);
   white-space: normal;
-  padding: 30px;
+  padding: 10px 0px;
   margin: 0px 20px;
   transition: all ease-in-out 0.3s;
 }
@@ -220,6 +220,7 @@
   transition: all ease-in-out 0.3s;
   color: rgb(39, 39, 39);
   background-color: rgb(255, 255, 255);
+  font-size: 15px;
 }
 .card .btn-purchase:hover {
   padding: 10px 70px;
@@ -234,7 +235,10 @@
 }
 
 .card-premium {
-  border: 2px solid rgb(221, 99, 99);
+  border: 3px solid rgba(221, 99, 99, 0.589);
+}
+.card-premium:hover {
+  border: 3px solid rgb(221, 99, 99);
 }
 .card-premium .btn-purchase {
   color: white;
@@ -255,6 +259,7 @@
 .corp-product {
   display: flex;
   flex-direction: column;
+  padding: 40px;
 }
 
 .card .prices {
