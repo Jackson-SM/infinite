@@ -1,6 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Montserrat:wght@200;300&family=Open+Sans&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=M+PLUS+1+Code:wght@400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@400&display=swap');
 
 * {
   margin: 0;
@@ -104,6 +107,32 @@
 }
 
 .section-two {
+  background-color: white;
+}
+
+.section-two .apresentation {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.section-two .apresentation img {
+  margin-left: 50px;
+}
+
+.section-two .apresentation .apresentation-text p{
+  font-size: 20px;
+  padding: 40px;
+  font-family: 'Spartan', sans-serif;
+}
+
+.section-two .apresentation h1 {
+  font-size: 45px;
+}
+
+.section-three {
   height: 800px;
   margin: 0 auto;
   background: linear-gradient(to right, rgb(29, 29, 41),rgb(31, 31, 39), rgb(49, 49, 87));
@@ -307,4 +336,92 @@
 
 div p {
   font-family: 'M PLUS 1 Code', sans-serif;
+}
+
+/* Account Log */
+.menu {
+  width: 100%;
+  text-align: center;
+  margin-right: 120px;
+}
+
+.menu ul li{
+  position: relative;
+}
+
+.menu ul ul {
+  background-color: blueviolet;
+  position: absolute;
+  left: 0;
+  width: 150px;
+  border-radius: 5px;
+  margin: 0;
+}
+
+.menu ul ul li {
+  padding: 0;
+  margin: 0;
+}
+
+.menu ul ul li a {
+  display: block;
+  padding: 6px;
+  border-radius: 3px;
+}
+
+.menu ul ul li a:hover {
+  background-color: rgb(233, 233, 233);
+  color: rgb(24, 24, 24);
+}
+
+.menu ul ul {
+  visibility: hidden;
+}
+
+.menu ul li:hover ul {
+  visibility: visible;
+  display: block;
+}
+
+/*Stand*/
+footer {
+  background: linear-gradient(to right, rgb(29, 29, 41),rgb(31, 31, 39), rgb(49, 49, 87));
+}
+
+.split {
+  color: red;
+}
+
+.stand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+}
+
+.stand span {
+  font-family: 'Spartan', sans-serif;
+  color: white;
+}
+
+.stand img {
+  transition: all ease-in 0.2s;
+}
+
+.stand img:hover {
+  transform: scale(1.20);
+}
+
+.group-img {
+  padding: 0px 10px;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(359deg);
+  }
 }

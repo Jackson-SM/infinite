@@ -2,6 +2,15 @@ const express = require('express');
 const app = express();
 const handlebars = require('express-handlebars')
 const Usuarios = require('./models/db')
+const session = require('express-session')
+const flash = require("connect-flash")
+
+app.use(session({
+  secret: "aijfojsainfnvoij2j90asjpf",
+  resave: true,
+  saveUninitialized: false
+}))
+app.use(flash())
 
 app.engine('handlebars', handlebars({defaultLayout: 'main'}))
 app.set('view engine', 'handlebars')
@@ -11,24 +20,80 @@ app.use(express.urlencoded({extended: true}))
 app.use(express.static('public'))
 
 app.get('/', (req,res) => {
-  res.render('index', {
-    session: 'sessao'
-  })
+  if(req.session.login){
+    Usuarios.findAll({where: {'login': req.session.login}})
+    .then(user => {
+      res.render('index', {
+        user: user,
+        session: req.session.login
+      })
+    })
+  }else{
+    res.render('index')
+  }
 })
 
+/* Login */
 app.get('/login', (req,res) => {
-  res.render('login')
+  if(req.session.login){
+    res.redirect('/')
+  }else{
+    res.render('login')
+  }
 })
 
-app.post('/authenticate', (req,res) => {
+app.post('/login', (req,res) => {
   Usuarios.findAll({where: {
     login: req.body.login
   }}).then(log => {
-    const {password} = log[0]
     if(log.length > 0){
-      password == req.body.password ? res.redirect('/') : res.redirect('/login')
+      const {password,login} = log[0]
+      if(password == req.body.password){
+        req.session.login = login
+        res.redirect('/')
+      }else{
+        res.redirect('/login')
+      }
+    }else{
+      res.redirect('/login')
     }
   }).catch(err => res.send(err))
+})
+/*Login - END*/
+
+/* Register */
+
+app.get('/register', (req,res) => {
+  res.render('register')
+})
+
+app.post('/register', (req,res) => {
+  Usuarios.create({
+    login: req.body.login,
+    password: req.body.password,
+    email: req.body.email,
+    name: req.body.name
+  }).then(ret => res.redirect('/')).catch(err => res.redirect('/register'))
+})
+
+/* Register - END*/
+
+app.get('/logout/:id', (req,res) => {
+  Usuarios.findAll({where: {'id': req.params.id}})
+  .then(user => {
+    req.session.login = undefined
+    res.redirect('/')
+  }).catch(err => {
+    res.redirect('/')
+  })
+})
+
+app.get('/delete/:id', (req,res) => {
+  Usuarios.destroy({where: {'id': req.params.id}})
+  .then(function(){
+    req.session.login = undefined
+    res.redirect('/')
+  }).catch(err => console.log(err))
 })
 
 app.listen('3001', function(){

@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
+    "connect-flash": "^0.1.1",
     "express": "^4.17.1",
     "express-session": "^1.17.2",
     "handlebars": "^4.7.7",
