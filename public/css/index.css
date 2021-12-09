@@ -133,7 +133,6 @@
 }
 
 .section-three {
-  height: 800px;
   margin: 0 auto;
   background: linear-gradient(to right, rgb(29, 29, 41),rgb(31, 31, 39), rgb(49, 49, 87));
   text-align: center;
@@ -208,6 +207,8 @@
   justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
+  padding: 20px;
+  margin: 20px;
 }
 
 .card {
@@ -281,8 +282,18 @@
   background-color: rgb(173, 74, 197);
   color: white;;
 }
-.card-diamond .btn-purchase:hover {
+.card-diamond .btn-purchase:hover{
   background-color: rgb(147, 23, 179);
+}
+
+.icon-purchase {
+  font-size: 16px;
+  transition: all ease-in 0.4s;
+}
+
+.btn-purchase:hover .icon-purchase {
+  transform: rotate(360deg);
+  transition: all ease 0.7s;
 }
 
 .corp-product {
@@ -394,6 +405,7 @@ footer {
 
 .stand {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 5px;
@@ -414,14 +426,17 @@ footer {
 
 .group-img {
   padding: 0px 10px;
+  display: flex;
 }
 
-@keyframes rotate {
-  from {
-    transform: rotate(0deg);
-  }
+.img-representation {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0px 5px;
+}
 
-  to {
-    transform: rotate(359deg);
-  }
+.img-representation span{
+  font-size: 12px;
 }
