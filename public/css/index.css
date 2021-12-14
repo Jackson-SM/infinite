@@ -11,65 +11,123 @@
   box-sizing: border-box;
 }
 
-
 .navbar {
-  position: fixed;
-  
-  height: 80px;
   width: 100%;
-  
-  background-color: transparent;
-  color: rgb(226, 226, 226);
-
+  height: 70px;
+  font-family: 'Montserrat', sans-serif;
   display: flex;
   align-items: center;
   justify-content: space-between;
-
-  font-family: 'Montserrat', sans-serif;
+  position: fixed;
   font-size: 15px;
-
-  transition: all ease-in-out 0.3s;
-
   z-index: 2;
+}
+
+.navbar .nav-items{
+  display: flex;
+}
+
+.navbar .nav-items a:hover {
+  transition: all ease-in-out 200ms;
+  color: #ccc;
 }
 
 .navbar ul {
   list-style: none;
+  position: relative;
 }
 
-.navbar .nav-items a {
+.navbar ul li a i {
+  transition: all ease 250ms;
+}
+
+.navbar ul li:hover a i {
+  transform: rotate(180deg);
+}
+
+.navbar a {
+  padding: 15px;
+  display: block;
   text-decoration: none;
-  color: rgb(226, 226, 226);
-  transition: all ease-in 200ms;
+  text-align: center;
+  color: #fff;
 }
 
-.navbar .nav-items a:hover {
-  color: rgb(185, 185, 185);
+.navbar ul ul {
+  background-color: rgba(68, 68, 68, 0.767);
+  position: absolute;
+  visibility: hidden;
+  width: 100%;
+  border-radius: 5px;
+  overflow: hidden;
+  left: 0;
+  top: 50%;
+  opacity: 0.5;
+  transition: all 200ms ease-in-out;
+}
+
+.navbar ul li:hover ul {
+  visibility: visible;
+  opacity: 1;
+  zoom: 1;
+  top: 100%;
+}
+
+.navbar .account ul {
+  width: 140px;
+}
+
+.navbar .account {
+  margin-right: 20px;
+}
+
+.navbar ul ul a {
+  padding: 10px;
+}
+
+.navbar ul ul li {
+  width: 100%;
+}
+
+.navbar ul ul li:hover a {
+  background-color: rgb(255, 255, 255);
+  color: black;
+  transition: all 150ms ease-in-out;
+}
+
+
+.navbar ul ul li {
+  border-bottom: solid 1px #ccc;
+}
+.navbar ul ul li:last-child {
+  border: none;
 }
 
 /* navbar items*/
-.nav-items {
+.buttons-account {
   display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
 }
 
-.nav-items li {
-  padding: 7px;
+.buttons-account > a {
+  padding: 0;
 }
 
-.account {
-  margin: 0px 10px 0px 0px;
+.buttons-account .btn-login {
+  padding: 5px;
+  transition: all ease 200ms;
 }
 
-.account a {
-  text-decoration: none;
-  color: white;
-  transition: all ease-out 0.3s;
-  margin: 4px;
+.buttons-account .btn-login:hover {
+  color: #ccc;
 }
 
 .btn-register {
-  width: 120px;
-  height: 45px;
+  width: 100px;
+  height: 40px;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .btn-register::before{
@@ -77,16 +135,6 @@
   left: 0;
   top: 100%;
 }
-
-.btn-login:hover {
-  color: rgb(212, 212, 212);  
-}
-
-.btn-login {
-  padding: 0;
-  margin: 0;
-}
-
 /*Section Main*/
 
 .start-session {
@@ -135,7 +183,6 @@
 .btn {
   cursor: pointer;
   border-radius: 5px;
-  font-family: "Rubik", sans-serif;
   font-size: 17px;
   position: relative;
   z-index: 1;
@@ -164,11 +211,16 @@
 .btn-announcement {
   width: 230px;
   height: 50px;
+  border: 1px solid rgba(199, 86, 243, 0.774);
+  font-family: 'Rubik', sans-serif;
+}
+
+.btn-announcement:hover {
   border: 2px solid rgba(199, 86, 243, 0.774);
 }
 
 .btn-announcement::before {
-  background: linear-gradient(to left, rgb(201, 41, 250), rgb(228, 66, 66));
+  background: linear-gradient(to left, rgb(206, 51, 147), rgb(182, 35, 240));
   left: -100%;
   top: 0;
 }
@@ -415,48 +467,11 @@ div p {
 }
 
 /* Account Log */
-.menu {
+
+.menu a:hover {
   width: 100%;
-  text-align: center;
-  margin-right: 120px;
-}
-
-.menu ul li{
-  position: relative;
-}
-
-.menu ul ul {
-  background-color: blueviolet;
-  position: absolute;
-  left: 0;
-  width: 150px;
-  border-radius: 5px;
-  margin: 0;
-}
-
-.menu ul ul li {
-  padding: 0;
-  margin: 0;
-}
-
-.menu ul ul li a {
-  display: block;
-  padding: 6px;
-  border-radius: 3px;
-}
-
-.menu ul ul li a:hover {
-  background-color: rgb(233, 233, 233);
-  color: rgb(24, 24, 24);
-}
-
-.menu ul ul {
-  visibility: hidden;
-}
-
-.menu ul li:hover ul {
-  visibility: visible;
-  display: block;
+  height: 50px;
+  background-color: #222;
 }
 
 /*Stand*/
@@ -498,7 +513,7 @@ footer {
   border-radius: 5px;
   padding: 5px 20px;
   margin: 5px 5px;
-  transition: all ease-in 0.2s;
+  transition: all ease-in-out 100ms;
 }
 
 .img-a:hover .img-representation {

@@ -1,33 +1,36 @@
 <nav class="navbar">
   <img src="imgs/icons8-redux.svg" alt="Logo" width="80px">
   <ul class="nav-items">
-    <li><a href="lorem">Home</a></li>
-    <li><a href="lorem">About</a></li>
-    <li><a href="lorem">Support</a></li>
+    <li class="items"><a href="lorem">Home</a></li>
+    <li class="items"><a href="lorem">About</a></li>
+    <li class="items"><a href="lorem">Support</a></li>
   </ul>
   <div class="account">
     {{#if session}}
     {{#each user}}
-    <nav class="menu">
-      <ul>
-        <li><a href="#">{{dataValues.name}}</a>
-          <ul>
-            <li><a href="/logout/{{dataValues.id}}">Logout</a></li>
-            <li><a href="/delete/{{dataValues.id}}">Remover Conta</a></li>
-          </ul>
-        </li>
-      </ul>
-    </nav>
+    <ul>
+      <li><a href="#">{{dataValues.name}} <i class="far fa-chevron-up"></i></a>
+        <ul>
+          <li><a href="/logout/{{dataValues.id}}">Logout</a></li>
+          <li><a href="/delete/{{dataValues.id}}">Remover Conta</a></li>
+          <li><a href="/logout/{{dataValues.id}}">Logout</a></li>
+          <li><a href="/logout/{{dataValues.id}}">Logout</a></li>
+          <li><a href="/logout/{{dataValues.id}}">Logout</a></li>
+        </ul>
+      </li>
+    </ul>
     {{/each}}
     {{else}}
-    <a href="/login" class="btn-login">Entrar</a>
-    <a href="/register"><button class="btn-register btn">Registrar</button></a>
+    <div class="buttons-account">
+      <a href="/login" class="btn-login">Entrar</a>
+      <a href="/register"><button class="btn-register btn">Registrar</button></a>
+    </div>
     {{/if}}
   </div>
 </nav>
 <section class="start-session">
   <div class="introduction">
-    <div class="titles">
+    <div class=>
       <h1>Lorem Ipsum Dolor Sit Amet Consectetur.</h1>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.
       </p>
