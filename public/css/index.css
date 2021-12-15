@@ -21,6 +21,7 @@
   position: fixed;
   font-size: 15px;
   z-index: 2;
+  transition: all ease-in-out 300ms;
 }
 
 .navbar .nav-items{
@@ -215,10 +216,6 @@
   font-family: 'Rubik', sans-serif;
 }
 
-.btn-announcement:hover {
-  border: 2px solid rgba(199, 86, 243, 0.774);
-}
-
 .btn-announcement::before {
   background: linear-gradient(to left, rgb(206, 51, 147), rgb(182, 35, 240));
   left: -100%;
@@ -293,7 +290,7 @@
   transform: scale(1.10);
 }
 
-.section-three {
+.product-purchase {
   background: linear-gradient(to right, rgb(29, 29, 41),rgb(31, 31, 39), rgb(49, 49, 87));
   text-align: center;
   color: rgb(214, 214, 214);
@@ -304,6 +301,115 @@
   justify-content: space-around;
 }
 
+/*Comments*/
+.info-products {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.title-info {
+  font-family: "Rubik", sans-serif;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 30px;
+}
+
+.title-info h1 {
+  font-size: 40px;
+  padding: 20px;
+}
+
+.title-info h1 + span {
+  font-size: 20px;
+}
+
+.info {
+ width: 360px;
+ height: 350px;
+ border: 1px solid rgba(66, 66, 66, 0.418);
+ box-shadow: 0 0 10px rgba(51, 51, 51, 0.452);
+ font-size: 20px;
+ display: flex;
+ flex-direction: column;
+ justify-content: space-around;
+ align-items: center;
+ color: rgba(31, 31, 31, 0.877);
+ border-radius: 5px;border-radius: 10px;
+ margin: 30px 10px;
+}
+
+.info .body-info {
+  font-size: 20px;
+  font-family: 'Abel', sans-serif;
+  padding: 0px 5px;
+  text-align: center;
+}
+
+.title-info-card {
+  font-family: 'Spartan', sans-serif;
+  font-size: 13px;
+  color: #222;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: 0 5px;
+}
+
+.title-info-card h1 {
+  background-image: linear-gradient(to bottom, rebeccapurple, steelblue, turquoise);
+  background-clip: text;
+  -webkit-background-clip: text; 
+  -webkit-text-fill-color: transparent;
+  margin-top: 10px;
+}
+
+.title-info-card i {
+  font-size: 39px;
+  color: rgb(58, 58, 58);
+  background-image: linear-gradient(to bottom, rebeccapurple, steelblue, turquoise);
+  background-clip: text;
+  -webkit-background-clip: text; 
+  -webkit-text-fill-color: transparent;
+}
+
+.title-info-card hr {
+  border: none;
+  height: 1px;
+  background: linear-gradient(to left, rebeccapurple, steelblue, turquoise);
+  margin: 5px 0px;
+}
+
+.info > a {
+  text-decoration: none;
+  font-family: 'Spartan', sans-serif;
+  font-size: 13px;
+  color: #222;
+  font-weight: bold;
+  transition: all 200ms ease;
+}
+
+.info > a:hover {
+  color: rgba(53, 53, 53, 0.822);
+}
+
+.info > a i {
+  font-size: 17px;
+  background-image: linear-gradient(to bottom, rgb(238, 175, 92), rgb(224, 136, 53), rgb(224, 69, 42));
+  background-clip: text;
+  -webkit-background-clip: text; 
+  -webkit-text-fill-color: transparent;
+}
+
+
+.infos-cards {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
 /*Cards*/
 
 .title-products {
