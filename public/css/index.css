@@ -156,6 +156,22 @@
   align-items: center;
   justify-content: space-around;
   margin-top: 100px;
+  text-align: center;
+}
+
+.start-session .introduction, .start-session img {
+  animation: aparecer 1s ease-in-out forwards;
+}
+
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 .start-session .introduction > .titles * {
@@ -261,7 +277,16 @@
 }
 
 .apresentation-session .apresentation img {
-  margin-left: 50px;
+  animation: fly 1s ease-in-out alternate infinite;
+}
+
+@keyframes fly {
+  from {
+    transform: translateY(10px);
+  }
+  to {
+    transform: translateY(20px);
+  }
 }
 
 .apresentation-session .apresentation .apresentation-text p{
@@ -291,7 +316,7 @@
 }
 
 .product-purchase {
-  background: linear-gradient(to right, rgb(29, 29, 41),rgb(31, 31, 39), rgb(49, 49, 87));
+  background: linear-gradient(to right, rgb(36, 45, 92),rgb(31, 22, 22),rgb(20, 21, 51),rgb(57, 36, 92));
   text-align: center;
   color: rgb(214, 214, 214);
   overflow: hidden;
@@ -299,31 +324,56 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
+  background-size: 300% 300%;
+  animation: degrade 8s ease alternate infinite;
+}
+
+@keyframes degrade {
+  from {
+    background-position: 0 0;
+  }
+  to{
+    background-position: 100%;
+  }
 }
 
 /*Comments*/
 .info-products {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
+}
+
+.title-info a {
+  text-decoration: none;
+  color: rgb(126, 126, 126);
+  font-family: 'Spartan', sans-serif;
+  font-size: 20px;
+  transition: all ease-in-out 200ms;
+  position: relative;
+}
+
+.title-info a > i {
+  transition: all ease-in-out 250ms;
+}
+
+.title-info a:hover > i {
+  transform: rotate(135deg);
 }
 
 .title-info {
   font-family: "Rubik", sans-serif;
+  position: relative;
   display: flex;
+  justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding: 30px;
+  gap: 0.5rem;
 }
 
-.title-info h1 {
-  font-size: 40px;
-  padding: 20px;
-}
-
-.title-info h1 + span {
-  font-size: 20px;
+.title-info .options i{
+  font-size: 25px;
+  margin: 5px;
 }
 
 .info {
@@ -338,7 +388,6 @@
  align-items: center;
  color: rgba(31, 31, 31, 0.877);
  border-radius: 5px;border-radius: 10px;
- margin: 30px 10px;
 }
 
 .info .body-info {
@@ -356,7 +405,6 @@
   display: flex;
   flex-direction: column;
   text-align: center;
-  padding: 0 5px;
 }
 
 .title-info-card h1 {
@@ -374,6 +422,20 @@
   background-clip: text;
   -webkit-background-clip: text; 
   -webkit-text-fill-color: transparent;
+}
+
+.info:hover .title-info-card i {
+  animation: icon-balanced 200ms ease alternate;
+  animation-iteration-count: 4;
+}
+
+@keyframes icon-balanced {
+  from{
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-5px);
+  }
 }
 
 .title-info-card hr {
@@ -409,6 +471,9 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
+  gap: 2rem;
+  flex-flow: wrap;
+  padding: 20px;
 }
 /*Cards*/
 
