@@ -4,11 +4,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Rajdhani&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Spartan:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Carter+One&display=swap');
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+.logo a{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-family: 'Carter One', sans-serif;
+  font-size: 23px;
+  text-decoration: none;
 }
 
 .navbar {
@@ -17,7 +28,7 @@
   font-family: 'Montserrat', sans-serif;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   position: fixed;
   font-size: 15px;
   z-index: 2;
@@ -40,10 +51,6 @@
 
 .navbar ul li a i {
   transition: all ease 250ms;
-}
-
-.navbar ul li:hover a i {
-  transform: rotate(180deg);
 }
 
 .navbar .account .btn-login {
@@ -80,7 +87,7 @@
   transform: translate(-50%,0%);
 
   z-index: -1;
-  background: linear-gradient(to left, rgb(64, 233, 168),rgb(231, 82, 164), rgb(255, 166, 0));
+  background: linear-gradient(to right, rgb(64, 109, 233),rgb(82, 176, 231), rgb(77, 132, 252));
   transition: all ease-in-out 300ms;
 }
 
@@ -89,27 +96,33 @@
 }
 
 .navbar ul ul {
-  background-color: rgba(68, 68, 68, 0.767);
+  background-color: rgb(68, 68, 68);
   position: absolute;
-  visibility: hidden;
-  width: 100%;
   border-radius: 5px;
   overflow: hidden;
-  transform: translateX(150px);
+  display: block;
+  transform: translateX(200px);
+  width: 100%;
 }
 
 .navbar ul li:hover ul {
-  visibility: visible;
   zoom: 1;
-  animation: show-opacity 0.5s ease-in-out alternate-reverse forwards;
+  animation: show-opacity 0.5s ease-in-out forwards alternate;
 }
 
 @keyframes show-opacity {
-  from {
+  to {
     transform: translateX(-50px);
-  }to {
-    transform: translateX(150px);
   }
+}
+
+
+.dropdown-btn ul li i {
+  font-size: 16px;
+}
+
+.dropdown-btn ul li:hover .fa-trash {
+  color: rgb(238, 70, 70);
 }
 
 .navbar .account ul {
@@ -253,10 +266,14 @@
   position: absolute;
   transition: all ease-in-out 500ms;
 
-  width: 100%;
+  width: 0;
   height: 100%;
+  left: 50%;
+  top: 0;
 
   z-index: -1;
+
+  transform: translate(-50%, 0);
 }
 
 .btn-announcement {
@@ -268,13 +285,10 @@
 
 .btn-announcement::before {
   background: linear-gradient(to left, rgb(206, 51, 147), rgb(182, 35, 240));
-  left: -100%;
-  top: 0;
 }
 
 .btn:hover::before {
-  top: 0;
-  left: 0;
+  width: 100%;
 }
 
 .start-session .introduction div > h1 {
@@ -309,6 +323,7 @@
   justify-content: space-around;
   font-family: 'Montserrat', sans-serif;
   padding: 0px 20px;
+  text-align: center;
 }
 
 .apresentation-session .apresentation img {
@@ -322,6 +337,18 @@
   to {
     transform: translateY(20px);
   }
+}
+
+.apresentation-session .apresentation .apresentation-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 2rem;
+  align-items: center;
+}
+
+.apresentation-session .apresentation .apresentation-text a {
+  display: block;
 }
 
 .apresentation-session .apresentation .apresentation-text p{
@@ -756,4 +783,5 @@ footer {
   color: rgba(255, 255, 255, 0.781);
   font-family: 'Spartan', sans-serif;
   font-size: 12px;
+  padding: 10px;
 }

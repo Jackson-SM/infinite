@@ -25,7 +25,8 @@ app.get('/', (req,res) => {
     .then(user => {
       res.render('index', {
         user: user,
-        session: req.session.login
+        session: req.session.login,
+        title: 'Nano Tech'
       })
     })
   }else{
@@ -38,7 +39,9 @@ app.get('/login', (req,res) => {
   if(req.session.login){
     res.redirect('/')
   }else{
-    res.render('login')
+    res.render('login', {
+      title: 'Login'
+    })
   }
 })
 
@@ -64,7 +67,9 @@ app.post('/login', (req,res) => {
 /* Register */
 
 app.get('/register', (req,res) => {
-  res.render('register')
+  res.render('register', {
+    title: 'Register'
+  })
 })
 
 app.post('/register', (req,res) => {
