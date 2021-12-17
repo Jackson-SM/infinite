@@ -46,12 +46,46 @@
   transform: rotate(180deg);
 }
 
-.navbar a {
-  padding: 15px;
+.navbar .account .btn-login {
   display: block;
   text-decoration: none;
   text-align: center;
   color: #fff;
+  padding: 10px;
+  position: relative;
+  overflow: hidden;
+}
+
+.navbar .nav-items a, ul ul a {
+  display: block;
+  text-decoration: none;
+  text-align: center;
+  color: #fff;
+  padding: 10px;
+  position: relative;
+  overflow: hidden;
+}
+
+.navbar .nav-items a::before {
+  content: "";
+
+  position: absolute;
+
+  width: 0;
+  height: 100%;
+  top: 95%;
+  left: 50%;
+  bottom: 0;
+  right: 0;
+  transform: translate(-50%,0%);
+
+  z-index: -1;
+  background: linear-gradient(to left, rgb(64, 233, 168),rgb(231, 82, 164), rgb(255, 166, 0));
+  transition: all ease-in-out 300ms;
+}
+
+.navbar a:hover::before {
+  width: 100%;
 }
 
 .navbar ul ul {
@@ -61,17 +95,21 @@
   width: 100%;
   border-radius: 5px;
   overflow: hidden;
-  left: 0;
-  top: 50%;
-  opacity: 0.5;
-  transition: all 200ms ease-in-out;
+  transform: translateX(150px);
 }
 
 .navbar ul li:hover ul {
   visibility: visible;
-  opacity: 1;
   zoom: 1;
-  top: 100%;
+  animation: show-opacity 0.5s ease-in-out alternate-reverse forwards;
+}
+
+@keyframes show-opacity {
+  from {
+    transform: translateX(-50px);
+  }to {
+    transform: translateX(150px);
+  }
 }
 
 .navbar .account ul {
@@ -82,12 +120,9 @@
   margin-right: 20px;
 }
 
-.navbar ul ul a {
-  padding: 10px;
-}
-
-.navbar ul ul li {
-  width: 100%;
+.dropdown > li a {
+  color: white;
+  text-decoration: none;
 }
 
 .navbar ul ul li:hover a {
@@ -95,7 +130,6 @@
   color: black;
   transition: all 150ms ease-in-out;
 }
-
 
 .navbar ul ul li {
   border-bottom: solid 1px #ccc;
@@ -274,6 +308,7 @@
   align-items: center;
   justify-content: space-around;
   font-family: 'Montserrat', sans-serif;
+  padding: 0px 20px;
 }
 
 .apresentation-session .apresentation img {
@@ -316,7 +351,7 @@
 }
 
 .product-purchase {
-  background: linear-gradient(to right, rgb(36, 45, 92),rgb(31, 22, 22),rgb(20, 21, 51),rgb(57, 36, 92));
+  background: linear-gradient(to right, rgb(36, 45, 92),rgb(75, 37, 37),rgb(17, 31, 61),rgb(87, 36, 92));
   text-align: center;
   color: rgb(214, 214, 214);
   overflow: hidden;
@@ -343,24 +378,6 @@
   flex-direction: column;
   justify-content: center;
 }
-
-.title-info a {
-  text-decoration: none;
-  color: rgb(126, 126, 126);
-  font-family: 'Spartan', sans-serif;
-  font-size: 20px;
-  transition: all ease-in-out 200ms;
-  position: relative;
-}
-
-.title-info a > i {
-  transition: all ease-in-out 250ms;
-}
-
-.title-info a:hover > i {
-  transform: rotate(135deg);
-}
-
 .title-info {
   font-family: "Rubik", sans-serif;
   position: relative;
@@ -480,7 +497,7 @@
 .title-products {
   font-size: 40px;
   font-family: 'Montserrat', sans-serif;
-  margin: 0px 0px 30px 0px;
+  margin: 40px 0px;
 }
 
 .economy {
@@ -511,7 +528,6 @@
   font-family: "Montserrat", sans-serif;
   box-shadow: 4px 3px 7px rgba(71, 71, 71, 0.514);
   border: solid 1px rgb(121, 121, 121);
-  background: linear-gradient(to left, rgb(29, 29, 41),rgb(31, 31, 39), rgb(49, 49, 87));
   color: rgb(201, 200, 200);
   white-space: normal;
   padding: 10px 0px;
@@ -576,7 +592,7 @@
 
 .icon-purchase {
   font-size: 16px;
-  transition: all ease-in 0.4s;
+  transition: all ease-in-out 0.4s;
 }
 
 .btn-purchase:hover .icon-purchase {
@@ -698,4 +714,46 @@ footer {
   text-decoration-line: overline;
   text-decoration-style: dashed;
   text-decoration-color: rgba(255, 255, 255, 0.877);
+}
+
+.topics {
+  display: flex;
+  justify-content: space-around;
+}
+
+.topics .links {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin: 30px 0px;
+}
+
+.topics .links .title-links {
+  padding: 10px 0px;
+}
+
+.topics .links .title-links h1 {
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+}
+
+.topics .links a{
+  color: white;
+  text-decoration: none;
+  font-family: 'Spartan', sans-serif;
+  font-size: 14px;
+  transition: all ease-in-out 200ms;
+}
+
+.topics .links a:hover {
+  color: rgb(43, 135, 255);
+}
+
+.copyright {
+  display: flex;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.781);
+  font-family: 'Spartan', sans-serif;
+  font-size: 12px;
 }

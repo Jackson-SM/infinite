@@ -1,21 +1,18 @@
 <nav class="navbar">
   <img src="imgs/icons8-redux.svg" alt="Logo" width="80px">
-  <ul class="nav-items">
-    <li class="items"><a href="lorem">Home</a></li>
-    <li class="items"><a href="lorem">About</a></li>
-    <li class="items"><a href="lorem">Support</a></li>
-  </ul>
+  <div class="nav-items">
+    <a href="lorem">Home</a></li>
+    <a href="lorem">About</a></li>
+    <a href="lorem">Support</a></li>
+  </div>
   <div class="account">
     {{#if session}}
     {{#each user}}
-    <ul>
-      <li><a href="#">{{dataValues.name}} <i class="far fa-chevron-up"></i></a>
+    <ul class="dropdown">
+      <li class="dropdown-btn"><a href="#">{{dataValues.name}} <i class="far fa-chevron-up"></i></a>
         <ul>
           <li><a href="/logout/{{dataValues.id}}">Logout</a></li>
           <li><a href="/delete/{{dataValues.id}}">Remover Conta</a></li>
-          <li><a href="/logout/{{dataValues.id}}">Logout</a></li>
-          <li><a href="/logout/{{dataValues.id}}">Logout</a></li>
-          <li><a href="/logout/{{dataValues.id}}">Logout</a></li>
         </ul>
       </li>
     </ul>
@@ -30,7 +27,7 @@
 </nav>
 <section class="start-session">
   <div class="introduction">
-    <div class=>
+    <div>
       <h1>Lorem Ipsum Dolor Sit Amet Consectetur.</h1>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.
       </p>
@@ -91,7 +88,7 @@
 <hr>
 <section class="info-products">
   <div class="title-info">
-    <a href="">Plataformas <i class="fas fa-plus"></i></a>
+    <span>Plataformas</span>
     <div class="options">
       <i class="fab fa-apple"></i>
       <i class="fab fa-windows"></i>
@@ -234,6 +231,51 @@
   <hr class="split"
     style="border: none;height: 1px;background: linear-gradient(to right,rgb(0, 119, 255), rgb(236, 66, 66), rgb(55, 0, 255));">
   <div class="topics">
-
+    <div class="links">
+      <div class="title-links">
+        <h1>Serviços</h1>
+      </div>
+      <a href="">Lorem</a>
+      <a href="">Lorem</a>
+      <a href="">Lorem</a>
+      <a href="">Lorem</a>
+      <a href="">Lorem</a>
+    </div>
+    <div class="links">
+      <div class="title-links">
+        <h1>Sobre nós</h1>
+      </div>
+      <a href="">Onde ficamos</a>
+      <a href="">Propósito</a>
+      <a href="">Lorem</a>
+      <a href="">Lorem</a>
+      <a href="">Lorem</a>
+    </div>
+    <div class="links">
+      <div class="title-links">
+        <h1>Ajuda</h1>
+      </div>
+      <a href="">Conexão</a>
+      <a href="">Recuperar Conta</a>
+      <a href="">Bugs</a>
+      <a href="">Sugestões</a>
+      <a href="">Fale Conosco</a>
+    </div>
+    <div class="links">
+      <div class="title-links">
+        <h1>Redes Sociais</h1>
+      </div>
+      <a href="">Instagram</a>
+      <a href="">Linkedin</a>
+      <a href="">Github</a>
+      <a href="">Twitter</a>
+      <a href="">Youtube</a>
+      <a href="">Facebook</a>
+    </div>
+  </div>
+  <hr class="split"
+    style="border: none;height: 1px;background: linear-gradient(to right,rgb(0, 119, 255), rgb(236, 66, 66), rgb(55, 0, 255));">
+  <div class="copyright">
+    <span>Copyright © 2021 SemNome Brasil. Designed By <span>Jackson</span></span>
   </div>
 </footer>
