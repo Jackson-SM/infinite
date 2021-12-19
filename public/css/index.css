@@ -101,7 +101,7 @@
   border-radius: 5px;
   overflow: hidden;
   display: block;
-  transform: translateX(200px);
+  transform: translateX(300px);
   width: 100%;
 }
 
@@ -112,7 +112,7 @@
 
 @keyframes show-opacity {
   to {
-    transform: translateX(-50px);
+    transform: translateX(-20px);
   }
 }
 

@@ -40,7 +40,7 @@ app.get('/login', (req,res) => {
     res.redirect('/')
   }else{
     res.render('login', {
-      title: 'Login'
+      title: 'Login',
     })
   }
 })
@@ -68,18 +68,42 @@ app.post('/login', (req,res) => {
 
 app.get('/register', (req,res) => {
   res.render('register', {
-    title: 'Register'
+    title: 'Register',
+    error: req.flash('failed')
   })
 })
 
 app.post('/register', (req,res) => {
-  Usuarios.create({
-    login: req.body.login,
-    password: req.body.password,
-    email: req.body.email,
-    name: req.body.name
-  }).then(ret => res.redirect('/')).catch(err => res.redirect('/register'))
+  Usuarios.findAll({where: {login: req.body.login}})
+  .then(acc => {
+    if(acc.length > 0){
+      req.flash('failed', 'Registro não efetuado')
+      res.redirect('/register')
+    }else {
+      Usuarios.create({
+        login: req.body.login,
+        password: req.body.password,
+        email: req.body.email,
+        name: req.body.name
+      }).then(user => {
+        req.session.login = user.login
+        res.redirect('/')
+      }).catch(err => res.redirect('/register'))
+    }
+  }).catch(err => res.redirect('/register'))
 })
+/* 
+Usuarios.findAll({where: {login: req.body.login}})
+  .then(acc => {
+    if(acc.length > 0){
+      res.send('Conta existente: ' + acc)
+    }else {
+      res.send('Conta não existente: ' + acc)
+    }
+  })
+  .catch(err => res.redirect('/register'))
+})
+*/
 
 /* Register - END*/
 
