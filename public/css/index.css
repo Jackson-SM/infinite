@@ -10,6 +10,22 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: url('../imgs/background.svg ');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  background-color: rgb(46, 49, 78);
+}
+
+@media (max-width: 987px){
+  body {
+    background-color: rgb(255, 255, 255);
+    background-position-x: center;
+  }
 }
 
 .logo a{
@@ -18,7 +34,7 @@
   justify-content: center;
   color: white;
   font-family: 'Carter One', sans-serif;
-  font-size: 23px;
+  font-size: 18px;
   text-decoration: none;
 }
 
@@ -47,10 +63,6 @@
 .navbar ul {
   list-style: none;
   position: relative;
-}
-
-.navbar ul li a i {
-  transition: all ease 250ms;
 }
 
 .navbar .account .btn-login {
@@ -101,21 +113,33 @@
   border-radius: 5px;
   overflow: hidden;
   display: block;
-  transform: translateX(300px);
   width: 100%;
+  visibility: hidden;
+  border: solid 2px rgb(141, 141, 141);
 }
 
 .navbar ul li:hover ul {
-  zoom: 1;
-  animation: show-opacity 0.5s ease-in-out forwards alternate;
+  visibility: visible;
+  animation: show-out 400ms ease-in-out alternate forwards;
 }
 
-@keyframes show-opacity {
-  to {
-    transform: translateX(-20px);
+@keyframes show-out {
+  from {
+    transform: translateY(10px);
+    opacity: 0;
+  }to {
+    transform: translateY(20px);
+    opacity: 1;
   }
 }
 
+.navbar ul .dropdown-btn > a i {
+  transition: all ease-in-out 300ms;
+}
+
+.navbar ul .dropdown-btn:hover > a i{
+  transform: translateX(30px) rotate(180deg);
+}
 
 .dropdown-btn ul li i {
   font-size: 16px;
@@ -133,6 +157,15 @@
   margin-right: 20px;
 }
 
+.dropdown {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.dropdown .dropdown-btn {
+  display: flex;
+  justify-content: center;
+}
 .dropdown > li a {
   color: white;
   text-decoration: none;
@@ -186,14 +219,7 @@
 /*Section Main*/
 
 .start-session {
-  height: 100vh;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-image: url('../imgs/background.svg ');
-  background-color: rgb(38, 38, 49);
   color: rgb(214, 214, 214);
-  padding: 0;
-  margin: 0;
   display: flex;
 }
 
@@ -206,7 +232,7 @@
   text-align: center;
 }
 
-.start-session .introduction, .start-session img {
+.start-session .introduction, .start-session .img-illustration {
   animation: aparecer 1s ease-in-out forwards;
 }
 
@@ -404,6 +430,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  background-color: rgb(255, 255, 255);
 }
 .title-info {
   font-family: "Rubik", sans-serif;

@@ -4,9 +4,10 @@ body {
   margin: 0;
   padding: 0;
   height: 100vh;
-  background: url('../imgs/Login/background-register.png');
+  background-image: url('../imgs/Login/background-register.png');
   background-size: cover;
   background-repeat: no-repeat;
+  box-sizing: border-box;
 }
 
 .center {
@@ -174,6 +175,7 @@ form button[type="submit"]:hover::before {
   align-items: center;
   justify-content: space-around;
   border-radius: 10px 0px 0px 10px;
+  background-position: 96%;
 }
 
 .card h1 {
@@ -236,4 +238,59 @@ form button[type="submit"]:hover::before {
 .terms strong {
   color: #3cbfe7;
   display: block;
+}
+
+.notification {
+  position: absolute;
+  background-color: rgb(48, 48, 48);
+  border-radius: 5px;
+  font-family: 'Montserrat', sans-serif;
+  color: white;
+  width: 280px;
+  text-align: center;
+  padding: 5px;
+  z-index: 2;
+  border: 2px solid rgb(180, 180, 180);
+  animation: opacity 800ms ease-in-out alternate forwards;
+  float: right;
+}
+
+@keyframes opacity {
+  from{
+    opacity: 0;
+  }to {
+    opacity: 1;
+  }
+}
+
+.notification button {
+  border: none;
+  outline: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: white;
+  background-color: transparent;
+  transition: .3s;
+}
+
+.notification button:hover {
+  color: rgb(240, 73, 73);
+}
+
+.notification .title-notification {
+  border-bottom: 2px solid #adadad;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.notification > span {
+  padding: 10px;
+  display: block;
+}
+
+.notification button:focus .notification,
+.notification button:valid .notification{
+  display: none;
 }

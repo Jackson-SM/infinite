@@ -4,20 +4,20 @@
 <nav class="navbar">
   <div class="logo">
     <a href="">
-      <img src="https://img.icons8.com/nolan/128/skyatlas.png" width="70px" />
+      <img src="/imgs/infinite-logo.png" width="50px" />
       <h1>Infinite</h1>
     </a>
   </div>
   <div class="nav-items">
-    <a href="lorem">Home</a></li>
-    <a href="lorem">About</a></li>
-    <a href="lorem">Support</a></li>
+    <a href="#home">Home</a></li>
+    <a href="#price">Prices</a></li>
+    <a href="#products">Products</a></li>
   </div>
   <div class="account">
     {{#if session}}
     {{#each user}}
     <ul class="dropdown">
-      <li class="dropdown-btn"><a href="#">{{dataValues.name}} <i class="far fa-chevron-up"></i></a>
+      <li class="dropdown-btn"><a href="">{{dataValues.name}} <i class="far fa-chevron-up"></i></a>
         <ul>
           <li><a href="">Settings <i class="fas fa-cog"></i></a></li>
           <li><a href="/delete/{{dataValues.id}}">Delete <i class="fas fa-trash"></i></a></li>
@@ -34,7 +34,7 @@
     {{/if}}
   </div>
 </nav>
-<section class="start-session">
+<section class="start-session" id="home">
   <div class="introduction">
     <div>
       <h1>Lorem Ipsum Dolor Sit Amet Consectetur.</h1>
@@ -101,7 +101,7 @@
   </div>
 </section>
 <hr>
-<section class="info-products">
+<section class="info-products" id="products">
   <div class="title-info">
     <span>Plataformas</span>
     <div class="options">
@@ -154,7 +154,7 @@
     </div>
   </div>
 </section>
-<section class="product-purchase">
+<section class="product-purchase" id="price">
   <div class="title-container">
     <h1 class="title-products">Lorem Ipsum Dolor Sit</h1>
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et

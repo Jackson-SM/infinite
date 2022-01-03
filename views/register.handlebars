@@ -1,7 +1,16 @@
 <head>
   <link rel="stylesheet" href="/css/register.css">
 </head>
-<h1>{{error}}</h1>
+
+{{#if error}}
+<div class="notification">
+  <div class="title-notification">
+    <span><i class="fas fa-bell"></i> Notification</span>
+    <button><i class="fas fa-times exit-notification"></i></button>
+  </div>
+  <span>{{error}}</span>
+</div>
+{{/if}}
 <div class="center">
   <div class="card">
     <h1>Get Started</h1>
@@ -23,7 +32,7 @@
     <div class="input-box">
       <input type="password" name="password" required>
       <span></span>
-      <label for="Password"><i class="fas fa-key"></i> Password</label>
+      <label for="password"><i class="fas fa-key"></i> Password</label>
     </div>
     <div class="input-box">
       <input type="email" name="email" required>
@@ -45,3 +54,4 @@
     </div>
   </form>
 </div>
+<script src="/js/notification.js"></script>

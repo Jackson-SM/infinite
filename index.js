@@ -26,11 +26,13 @@ app.get('/', (req,res) => {
       res.render('index', {
         user: user,
         session: req.session.login,
-        title: 'Nano Tech'
+        title: 'Infinite'
       })
     })
   }else{
-    res.render('index')
+    res.render('index', {
+      title: 'Infinite'
+    })
   }
 })
 
@@ -69,41 +71,29 @@ app.post('/login', (req,res) => {
 app.get('/register', (req,res) => {
   res.render('register', {
     title: 'Register',
-    error: req.flash('failed')
+    error: req.flash('error')
   })
 })
 
 app.post('/register', (req,res) => {
-  Usuarios.findAll({where: {login: req.body.login}})
-  .then(acc => {
-    if(acc.length > 0){
-      req.flash('failed', 'Registro não efetuado')
-      res.redirect('/register')
-    }else {
-      Usuarios.create({
-        login: req.body.login,
-        password: req.body.password,
-        email: req.body.email,
-        name: req.body.name
-      }).then(user => {
-        req.session.login = user.login
-        res.redirect('/')
-      }).catch(err => res.redirect('/register'))
+  Usuarios.findOrCreate({
+    where: {login: req.body.login},
+    defaults: {
+      login: req.body.login,
+      password: req.body.password,
+      email: req.body.email,
+      name: req.body.name
     }
-  }).catch(err => res.redirect('/register'))
-})
-/* 
-Usuarios.findAll({where: {login: req.body.login}})
-  .then(acc => {
-    if(acc.length > 0){
-      res.send('Conta existente: ' + acc)
-    }else {
-      res.send('Conta não existente: ' + acc)
+  }).then((user) => {
+    if(!user[1]){
+      req.flash('error', 'Usuário já existente')
+      res.redirect('/register')
+    }else{
+      req.session.login = req.body.login
+      res.redirect('/')
     }
   })
-  .catch(err => res.redirect('/register'))
 })
-*/
 
 /* Register - END*/
 
