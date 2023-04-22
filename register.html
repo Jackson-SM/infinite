@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./public/css/register.css">
+  <title>Register</title>
+</head>
+<body>
+  <div class="center">
+    <div class="card">
+      <h1>Get Started</h1>
+      <div>
+        <a href="">Sign-in with Google+</a>
+        <a href="">Sign-in with Facebook</a>
+      </div>
+    </div>
+    <form method="POST" autocomplete="off">
+      <div class="title">
+        <div class="line"></div>
+        <h1>Register</h1>
+      </div>
+      <div class="input-box">
+        <input type="text" name="login" required>
+        <span></span>
+        <label for="login"><i class="fas fa-user"></i> Login</label>
+      </div>
+      <div class="input-box">
+        <input type="password" name="password" required>
+        <span></span>
+        <label for="password"><i class="fas fa-key"></i> Password</label>
+      </div>
+      <div class="input-box">
+        <input type="email" name="email" required>
+        <span></span>
+        <label for="email"><i class="fas fa-envelope"></i> Email</label>
+      </div>
+      <div class="input-box">
+        <input type="text" name="name" required>
+        <span></span>
+        <label for="name"><i class="fas fa-address-card"></i> Name</label>
+      </div>
+      <div class="terms">
+        <input type="checkbox" name="terms" required>
+        <label for="terms">I Agree all the Statements in<strong>Terms of service</strong></label>
+      </div>
+      <button type="submit">Sign-up</button>
+      <div class="member">
+        <span>Already a Member?</span><a href="/login">Go to Sign-in</a>
+      </div>
+    </form>
+  </div>
+  <script src="/js/notification.js"></script>
+</body>
+</html>
